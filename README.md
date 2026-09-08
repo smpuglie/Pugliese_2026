@@ -30,6 +30,8 @@ JAX/Jaxlib compatibility with Windows and MacOS is currently **CPU-only and othe
    pip install -e .
    ```
 
+Installation should take **~3–10 minutes on a typical desktop computer**.
+
 ### GPU Support (Recommended)
 
 If you need CUDA support, replace the CPU-only JAX installation:
@@ -43,6 +45,8 @@ pip install jax[cuda12] -f https://storage.googleapis.com/jax-releases/jax_cuda_
 We encourage first-time users to look at the two tutorials in the notebooks folder ([Run simple simulations in a notebook](<notebooks/Tutorial 1: Run simple simulations in a notebook.ipynb>) and [Run and configure simulations from the command line](<notebooks/Tutorial 2: Run and configure simulations from the command line.ipynb>)).
 
 To begin running simulations, **users will need to create or update a `paths` config file to match their local file structure**. This can be done manually, or at the beginning of the first tutorial notebook under the "Specify or create paths" heading.
+
+The example simulations in Tutorial 1 (each one simulatino of 4604 neurons, 2 s of simulated time, one replicate) takes **~30–60 seconds on a typical desktop computer** at the relaxed ODE solver error tolerances the tutorial uses for speed, or **~2–4 minutes** at the tolerances (`rtol=2e-6`, `atol=5e-9`) used for the simulations in the paper. After reading the connectivity matrix and JIT-compiling the solver, further simulations in the same session will be somewhat faster. Due to the variable step size in the ODE solver, the runtime of a given simulation will depend not only on the size of the run but also on the dynamics of the output.
 
 ## Usage
 
@@ -208,3 +212,6 @@ SLURM jobs create output files in:
 - `./OutFiles/slurm-JOBID_ARRAYID.out` - SLURM output logs
 - Simulation results follow the Hydra output organization (see above)
 
+## License
+
+This project is licensed under the terms of the MIT license.
