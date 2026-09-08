@@ -46,7 +46,7 @@ We encourage first-time users to look at the two tutorials in the notebooks fold
 
 To begin running simulations, **users will need to create or update a `paths` config file to match their local file structure**. This can be done manually, or at the beginning of the first tutorial notebook under the "Specify or create paths" heading.
 
-The example simulations in Tutorial 1 (each one simulatino of 4604 neurons, 2 s of simulated time, one replicate) takes **~30–60 seconds on a typical desktop computer** at the relaxed ODE solver error tolerances the tutorial uses for speed, or **~2–4 minutes** at the tolerances (`rtol=2e-6`, `atol=5e-9`) used for the simulations in the paper. After reading the connectivity matrix and JIT-compiling the solver, further simulations in the same session will be somewhat faster. Due to the variable step size in the ODE solver, the runtime of a given simulation will depend not only on the size of the run but also on the dynamics of the output.
+The example simulations in Tutorial 1 (each one simulation of 4604 neurons, 2 s of simulated time, one replicate) takes **~30–60 seconds on a typical desktop computer** at the relaxed ODE solver error tolerances the tutorial uses for speed, or **~2–4 minutes** at the tolerances (`rtol=2e-6`, `atol=5e-9`) used for the simulations in the paper. After reading the connectivity matrix and JIT-compiling the solver, further simulations in the same session will be somewhat faster. Due to the variable step size in the ODE solver, the runtime of a given simulation will depend not only on the size of the run but also on the dynamics of the output.
 
 ## Usage
 
